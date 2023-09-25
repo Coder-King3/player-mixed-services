@@ -1,8 +1,6 @@
 /* Module */
 const Koa = require('koa')
 const app = new Koa()
-const CreateMiddleware = require('./middleware')
-const CreateRouter = require('./router')
 const views = require('koa-views')
 const json = require('koa-json')
 const cors = require('koa2-cors')
@@ -21,13 +19,20 @@ app.use(views(`${path.resolve()}/src/views`, { extension: 'pug' }))
 app.use(cors())
 onerror(app)
 
+/* Global */
+const CreateGlobal = require('./global')
+const mountGlobal = CreateGlobal()
+mountGlobal(global)
+
 /* Middlewares */
-const middleware = CreateMiddleware()
-middleware(app)
+const CreateMiddleware = require('./middleware')
+const mountMiddleware = CreateMiddleware()
+mountMiddleware(app)
 
 /* Router */
-const router = CreateRouter()
-router(app)
+const CreateRouter = require('./router')
+const mountRouter = CreateRouter()
+mountRouter(app)
 
 /* handler */
 app.on('error', (err, ctx) => {

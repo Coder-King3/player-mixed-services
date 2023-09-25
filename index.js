@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-/* path setting */
-require('module-alias/register')
-
 /* Module dependencies. */
 var app = require('./src/app')
 var debug = require('debug')('demo:server')

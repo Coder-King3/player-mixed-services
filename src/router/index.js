@@ -3,7 +3,7 @@ const users = require('./users')
 
 function CreateRouter() {
   const routes = [main, users]
-  return function router(app) {
+  return function mountRouter(app) {
     routes.forEach((route) => app.use(route.routes(), route.allowedMethods()))
   }
 }

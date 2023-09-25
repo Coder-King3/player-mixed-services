@@ -1,5 +1,7 @@
 const router = require('koa-router')()
+console.log(`222-require('@models')`)
 const { result } = require('@/models')
+// const { result } = require('../../models')
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {

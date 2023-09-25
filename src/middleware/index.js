@@ -8,7 +8,7 @@ async function logger(ctx, next) {
 
 function CreateMiddleware() {
   const middlewares = [logger]
-  return function middleware(app) {
+  return function mountMiddleware(app) {
     middlewares.forEach((middle) => app.use(middle))
   }
 }
