@@ -1,6 +1,8 @@
 /* 模块 */
 const Koa = require('koa')
 const app = new Koa()
+const Router = require('koa-router')
+const router = new Router()
 const cors = require('koa2-cors')
 const KoaStatic = require('koa-static')
 const path = require('path')
@@ -12,7 +14,7 @@ app.use(KoaStatic(path.resolve() + '/public'))
 
 /* 路由 */
 const initRoute = require('./router/index')
-initRoute(app)
+initRoute(app, router)
 
 /* 服务 */
 app.listen(PORT, () => {
