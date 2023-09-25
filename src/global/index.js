@@ -3,10 +3,9 @@ const path = require('path')
 
 // 路径别名
 function registerAlias() {
-  moduleAlias.addAlias('~', path.join(__dirname, '../../'))
-  moduleAlias.addAlias('@', path.join(__dirname, '../'))
+  moduleAlias.addAlias('~', `${path.resolve()}`)
+  moduleAlias.addAlias('@', `${path.resolve()}/src`)
   moduleAlias()
-  console.log(`111-registerAlias()`)
 }
 
 function registerKtypeof(globalThis) {
