@@ -4,7 +4,7 @@ const { result } = require('../../models')
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
     title: 'Player Mixed Services',
-    address: 'https://king-cms.onrender.com/'
+    address: 'https://player-mixed-services.vercel.app/'
   })
 })
 
