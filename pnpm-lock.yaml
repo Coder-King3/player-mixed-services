@@ -38,9 +38,6 @@ dependencies:
   koa2-cors:
     specifier: ^2.0.6
     version: 2.0.6
-  module-alias:
-    specifier: ^2.2.3
-    version: 2.2.3
   pug:
     specifier: ^2.0.3
     version: 2.0.4
@@ -1801,10 +1798,6 @@ packages:
       for-in: 1.0.2
       is-extendable: 1.0.1
     dev: true
-
-  /module-alias@2.2.3:
-    resolution: {integrity: sha512-23g5BFj4zdQL/b6tor7Ji+QY4pEfNH784BMslY9Qb0UnJWRAt+lQGLYmRaM0KDBwIG23ffEBELhZDP2rhi9f/Q==}
-    dev: false
 
   /ms@2.0.0:
     resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}

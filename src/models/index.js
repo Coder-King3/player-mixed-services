@@ -1,5 +1,3 @@
-const result = require('./result')
-
 module.exports = {
-  result
+  result: require('./result')
 }
