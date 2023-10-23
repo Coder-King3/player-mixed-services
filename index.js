@@ -4,7 +4,7 @@
 var app = require('./src/app')
 var debug = require('debug')('demo:server')
 var http = require('http')
-const { PORT } = require('./src/config/global.config')
+const { PORT } = require('./config/global.config')
 
 /* Get port from environment and store in Express. */
 var port = normalizePort(process.env.PORT || PORT)
