@@ -10,6 +10,11 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const onerror = require('koa-onerror')
 
+/* Proxy */
+const CreateProxy = require('./proxy')
+const mountProxy = CreateProxy()
+mountProxy(app)
+
 /* Mount */
 app.use(bodyparser({ enableTypes: ['json', 'form', 'text'] }))
 app.use(json())
@@ -33,11 +38,6 @@ mountMiddleware(app)
 const CreateRouter = require('./router')
 const mountRouter = CreateRouter()
 mountRouter(app)
-
-/* Router */
-const CreateProxy = require('./proxy')
-const mountProxy = CreateProxy()
-mountProxy(app)
 
 /* handler */
 app.on('error', (err, ctx) => {

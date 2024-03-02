@@ -1,9 +1,9 @@
-const proxy = require('koa2-proxy-middleware')
-const PROXY_CONFIG = require('./config')
+const koa2Proxy = require('./proxy')
+const proxyOptions = require('./options')
 
 function CreateProxy() {
   return function mountProxy(app) {
-    app.use(proxy(PROXY_CONFIG))
+    app.use(koa2Proxy(proxyOptions))
   }
 }
 
