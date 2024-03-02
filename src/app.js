@@ -34,6 +34,11 @@ const CreateRouter = require('./router')
 const mountRouter = CreateRouter()
 mountRouter(app)
 
+/* Router */
+const CreateProxy = require('./proxy')
+const mountProxy = CreateProxy()
+mountProxy(app)
+
 /* handler */
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
