@@ -9,9 +9,11 @@ router.get('/', async (ctx, next) => {
 })
 
 router.get('/welcome', async (ctx, next) => {
+  console.log('ctx.query', ctx.query)
   ctx.body = result.success({
     url: ctx.url,
-    message: `你好，你当前访问的接口是: ${ctx.url} `
+    message: `你好，你当前访问的接口是: ${ctx.url}`,
+    params: ctx.query
   })
 })
 
