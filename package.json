@@ -9,6 +9,7 @@
   "dependencies": {
     "debug": "^4.1.1",
     "http-proxy-middleware": "^2.0.6",
+    "jsonwebtoken": "^9.0.2",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-convert": "^1.2.0",

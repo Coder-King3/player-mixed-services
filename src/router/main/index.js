@@ -1,5 +1,12 @@
 const router = require('koa-router')()
 const { result } = require('../../models')
+async function delayer(time = 2000) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve()
+    }, time)
+  })
+}
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
@@ -183,6 +190,48 @@ router.get('/multidata', async (ctx, next) => {
       ],
       nextPage: 1
     }
+  })
+})
+
+// Test
+router.get('/testGet', async (ctx, next) => {
+  ctx.body = result.success({
+    url: ctx.url,
+    message: `GET 接口测试: ${ctx.url}`,
+    params: ctx.query,
+    ctx
+  })
+})
+
+router.post('/testPost', async (ctx, next) => {
+  console.log('ctx', ctx)
+  ctx.body = result.success({
+    url: ctx.url,
+    message: `POST 接口测试: ${ctx.url}`,
+    params: ctx.data,
+    ctx
+  })
+})
+
+router.get('/testDelay', async (ctx, next) => {
+  await delayer(3000)
+
+  await next()
+
+  ctx.body = result.success({
+    url: ctx.url,
+    message: `延迟接口测试: ${ctx.url}`,
+    params: ctx.query,
+    ctx
+  })
+})
+
+router.get('/testGet/:name/:id', async (ctx, next) => {
+  ctx.body = result.success({
+    url: ctx.url,
+    message: `GET 接口测试: ${ctx.url}`,
+    params: ctx.query,
+    ctx
   })
 })
 
