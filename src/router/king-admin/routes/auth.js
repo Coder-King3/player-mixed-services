@@ -7,8 +7,9 @@ const {
   useResponseSuccess
 } = require('../utils')
 function createAuthRoutes(router) {
-  router.get('/auth/login', (ctx, _next) => {
-    const { username, password } = ctx.query
+  router.post('/auth/login', (ctx, _next) => {
+    const { username, password } = ctx.request.body
+
     if (!password || !username) {
       ctx.body = useResponseError('Username and password are required')
     }
@@ -16,6 +17,7 @@ function createAuthRoutes(router) {
     const findUser = MOCK_USERS.find(
       (item) => item.username === username && item.password === password
     )
+    console.log(`findUser:`, findUser)
 
     if (!findUser) {
       ctx.body = useResponseError('Username or password is incorrect.')

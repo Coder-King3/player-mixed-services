@@ -67,4 +67,5 @@ function onListening() {
 
   console.log('Welcome use CoderKing Server')
   console.log(`Server started on port ${PORT}`)
+  console.log(`URL: http://localhost:${PORT}`)
 }
