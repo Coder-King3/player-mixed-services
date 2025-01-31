@@ -16,7 +16,6 @@ router.get('/', async (ctx, next) => {
 })
 
 router.get('/welcome', async (ctx, next) => {
-  console.log('ctx.query', ctx.query)
   ctx.body = result.success({
     url: ctx.url,
     message: `你好，你当前访问的接口是: ${ctx.url}`,
@@ -204,7 +203,6 @@ router.get('/testGet', async (ctx, next) => {
 })
 
 router.post('/testPost', async (ctx, next) => {
-  console.log('ctx', ctx)
   ctx.body = result.success({
     url: ctx.url,
     message: `POST 接口测试: ${ctx.url}`,

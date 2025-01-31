@@ -17,7 +17,6 @@ function createAuthRoutes(router) {
     const findUser = MOCK_USERS.find(
       (item) => item.username === username && item.password === password
     )
-    console.log(`findUser:`, findUser)
 
     if (!findUser) {
       ctx.body = useResponseError('Username or password is incorrect.')

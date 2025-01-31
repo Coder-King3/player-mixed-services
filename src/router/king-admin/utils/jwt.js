@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 const ACCESS_TOKEN_SECRET = 'king-3 <^_^> king-admin'
 
 function generateAccessToken(user) {
-  console.log(`user:`, user)
   return jwt.sign(user, ACCESS_TOKEN_SECRET, { expiresIn: '7d' })
 }
 

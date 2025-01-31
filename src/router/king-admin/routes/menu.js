@@ -7,7 +7,6 @@ const {
 
 function createMenuRoutes(router) {
   router.get('/menu/all', (ctx, _next) => {
-    console.log(`ctx:`, ctx)
     const userinfo = verifyAccessToken(ctx.request)
     if (!userinfo) {
       ctx.status = 403
